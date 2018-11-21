@@ -1,8 +1,13 @@
 #! /usr/bin/env python3
 
 from distutils.dir_util import copy_tree
+from shutil import copyfile
 
-config_files = ['i3', 'alacritty', 'nvim', 'polybar', 'rofi']
+config_directories = ['i3', 'alacritty', 'nvim', 'polybar', 'rofi']
+config_files = ['.spacemacs']
 
-for config in config_files:
-    copy_tree('/home/zios/.config/'+config, '/home/zios/project/dotfiles/'+config)
+for directory in config_directories:
+    copy_tree('/home/zios/.config/' + directory, '/home/zios/project/dotfiles/' + directory)
+
+for file in config_files:
+    copyfile('/home/zios/' + file, '/home/zios/project/dotfiles/' + file)
