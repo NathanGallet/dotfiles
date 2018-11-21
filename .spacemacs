@@ -343,9 +343,6 @@ you should place your code here."
   ;; React for .js file
   (add-to-list 'auto-mode-alist '("\\.jsx?$" . react-mode))
 
-  ;; Neotree wants some icons
-  (setq neo-theme (if (display-graphic-p) 'icons 'arrow))
-
   ;; Indentation style
   (setq indent-tabs-mode t)
 
