@@ -1,0 +1,145 @@
+[bar/top]
+
+;------------;
+; Dimensions ;
+;------------;
+width = 100%
+height = 40
+offset-y = 0
+offset-x = 0
+
+;------------;
+;  Location  ;
+;------------;
+bottom = false
+monitor = eDP-1
+override-redirect = false
+
+;------------;
+;   Fonts    ;
+;------------;
+font-0 = Hack:size=10;3
+font-1 = FontAwesome:size=18
+
+;------------;
+;   Colors   ;
+;------------;
+background = #141021
+foreground = #c4b7c5
+
+;------------;
+;  Modules   ;
+;------------;
+fixed-center = true
+padding-left = 2
+padding-right = 2
+module-margin = 1.5
+
+modules-left = alsa backlight battery
+modules-center = i3
+modules-right = wlan cpu date time
+
+tray-position = none
+tray-detached = true
+
+;------------;
+;     I3     ;
+;------------;
+[module/i3]
+type = internal/i3
+
+pin-workspaces = true
+strip-wsnumbers = true
+enable-scroll = false
+
+label-unfocused-foreground = #afafaf
+label-focused-foreground = #c5a9f9
+label-urgent-foreground = #ff0000
+
+;------------;
+;    Time    ;
+;------------;
+[module/time]
+type = internal/date
+interval = 1.0
+date =  %H:%M
+label = %date%
+
+;------------;
+;    Date    ;
+;------------;
+[module/date]
+type = internal/date
+date =  %e %B - %A
+label = %date%
+
+;------------;
+;  Battery   ;
+;------------;
+[module/battery]
+type = internal/battery
+battery = BAT0
+poll-interval = 1
+full-at = 99
+
+label-discharging = %percentage%%
+label-charging = %percentage%%
+label-full = %percentage%%
+
+format-discharging = <ramp-capacity> <label-discharging>
+format-full = <ramp-capacity> <label-full>
+format-charging =  <label-charging>
+
+ramp-capacity-0 = 
+ramp-capacity-1 = 
+ramp-capacity-2 = 
+ramp-capacity-3 = 
+ramp-capacity-4 = 
+
+;------------;
+;   Volume   ;
+;------------;
+[module/alsa]
+type = internal/alsa
+format-volume = <ramp-volume> <label-volume>
+
+format-muted =  0%
+
+ramp-volume-0 = 
+ramp-volume-1 = 
+ramp-volume-2 = 
+
+;------------;
+;   Volume   ;
+;------------;
+[module/backlight]
+type = internal/backlight
+
+card = intel_backlight
+format = <ramp> <label>
+
+label = %percentage%%
+
+ramp-0 = 
+ramp-1 = 
+ramp-2 = 
+
+;------------;
+;    wlan    ;
+;------------;
+[module/wlan]
+type = internal/network
+
+interface = wlp2s0
+
+interval = 5
+
+label-connected =  %essid%
+label-disconnected =  Not Connected
+
+;------------;
+;    Cpu     ;
+;------------;
+[module/cpu]
+type = internal/cpu
+label =  %percentage%%
