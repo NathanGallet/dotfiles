@@ -104,7 +104,7 @@ map <c-p> :FZF<CR>
 inoremap jk <esc>
 inoremap <C-space> <C-n>
 
-nnoremap <leader>s :w<CR>
+nnoremap <leader>fs :w<CR>
 nnoremap <leader>e :tabe ~/.config/nvim/init.vim<CR>
 nnoremap <leader>r :source ~/.config/nvim/init.vim<CR>
 
