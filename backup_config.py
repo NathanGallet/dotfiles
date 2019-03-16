@@ -3,7 +3,7 @@
 from distutils.dir_util import copy_tree
 from shutil import copyfile
 
-config_directories = ['i3', 'alacritty', 'nvim', 'polybar', 'rofi']
+config_directories = ['i3', 'alacritty', 'nvim', 'polybar', 'rofi', 'compton']
 config_files = ['.spacemacs']
 
 for directory in config_directories:
